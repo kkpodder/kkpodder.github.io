@@ -105,7 +105,7 @@ let activeYear = 'all';
 
 async function loadPublications() {
   try {
-    const res = await fetch('./publications.json');
+    const res = await fetch('publications.json');
     if (!res.ok) throw new Error('not found');
     allPubs = await res.json();
     allPubs.sort((a, b) => (b.year || 0) - (a.year || 0));
@@ -152,15 +152,20 @@ function renderPubs() {
     return;
   }
 
-  // Update count
   const countEl = document.getElementById('pub-count');
   if (countEl) countEl.textContent = `${filtered.length} publication${filtered.length !== 1 ? 's' : ''}`;
 
   pubList.innerHTML = filtered.map(pub => {
-    const venue   = pub.venue || pub.journal || pub.booktitle || '';
-    const authors = pub.authors
-      ? `<p class="pub-authors">${highlightAuthor(pub.authors)}</p>`
+    const venue = pub.venue || pub.journal || pub.booktitle || '';
+
+    // authors is an array — join, then highlight
+    const authorStr = Array.isArray(pub.authors)
+      ? pub.authors.join(', ')
+      : (pub.authors || '');
+    const authors = authorStr
+      ? `<p class="pub-authors">${highlightAuthor(authorStr)}</p>`
       : '';
+
     const links = buildLinks(pub);
     return `
       <article class="pub-item">
@@ -177,7 +182,7 @@ function renderPubs() {
 
 function highlightAuthor(authors) {
   return authors.replace(
-    /(Kanchon\s+Kanti\s+Podder|K\.?\s*K\.?\s*Podder|Podder,\s*K)/gi,
+    /(Kanchon\s+Kanti\s+Podder|Kanhon\s+Kanti\s+Podder|K\.?\s*K\.?\s*Podder|Podder,\s*K)/gi,
     '<strong>$1</strong>'
   );
 }
