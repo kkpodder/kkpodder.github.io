@@ -105,7 +105,7 @@ let activeYear = 'all';
 
 async function loadPublications() {
   try {
-    const res = await fetch('publications.json');
+    const res = await fetch('./publications.json');
     if (!res.ok) throw new Error('not found');
     allPubs = await res.json();
     allPubs.sort((a, b) => (b.year || 0) - (a.year || 0));
