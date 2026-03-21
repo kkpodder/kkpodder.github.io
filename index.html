@@ -3,130 +3,246 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kanchon Kanti Podder</title>
-  <meta name="description" content="Academic website of Kanchon Kanti Podder.">
+  <title>Kanchon Kanti Podder — PhD Researcher</title>
+  <meta name="description" content="Academic website of Kanchon Kanti Podder — PhD Researcher in Machine Learning, Robotics, and Healthcare AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-wrap">
-      <div class="site-title">
-        <h1>Kanchon Kanti Podder</h1>
-        <p class="subtitle">PhD Researcher in Machine Learning, Robotics, and Healthcare AI</p>
+
+  <!-- Noise overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-brand">
+        <span class="brand-initials">KKP</span>
+      </div>
+      <nav class="sidebar-nav" aria-label="Page sections">
+        <a href="#about"        class="nav-link" data-section="about">About</a>
+        <a href="#research"     class="nav-link" data-section="research">Research</a>
+        <a href="#publications" class="nav-link" data-section="publications">Publications</a>
+        <a href="#experience"   class="nav-link" data-section="experience">Experience</a>
+        <a href="#contact"      class="nav-link" data-section="contact">Contact</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="status-dot" aria-label="Currently available"></div>
+        <span>Open to collaboration</span>
       </div>
     </div>
+  </aside>
+
+  <!-- Mobile header -->
+  <header class="mobile-header" role="banner">
+    <span class="brand-initials-mobile">KKP</span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
-  <div class="page-layout">
-    <aside class="sidebar">
-      <nav class="sidebar-nav">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </aside>
+  <!-- Main -->
+  <main class="main" id="main">
 
-    <main class="main-content">
-      <section class="intro">
-        <div class="intro-flex">
-          <div class="intro-text">
-            <p class="eyebrow">Academic Homepage</p>
-            <h2>Research on intelligent systems for healthcare and real-world applications</h2>
-            <p>
-              I work on machine learning, biomedical signal processing, computer vision,
-              and robotics. My research focuses on building practical and reliable
-              intelligent systems for healthcare, perception, and human-centered AI.
-            </p>
-
-            <div class="links">
-              <a class="button primary" href="#publications">Selected Publications</a>
-              <a class="button" href="#">Download CV</a>
-            </div>
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div class="hero-grid">
+        <div class="hero-text reveal">
+          <p class="hero-label">PhD Researcher</p>
+          <h1 class="hero-name">Kanchon<br><em>Kanti Podder</em></h1>
+          <p class="hero-tagline">
+            Building practical intelligent systems at the intersection of
+            machine learning, biomedical signal processing, and healthcare AI.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#publications">Selected Publications</a>
+            <a class="btn btn-ghost" href="#">Download CV</a>
           </div>
-
-          <div class="intro-image">
-            <img src="profile.jpg" alt="Kanchon Kanti Podder" class="profile-main" width="50" height="50">
+          <div class="hero-tags">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Robotics</span>
+            <span class="tag">Healthcare AI</span>
+            <span class="tag">Computer Vision</span>
           </div>
         </div>
-      </section>
+        <div class="hero-photo reveal reveal-delay">
+          <div class="photo-frame">
+            <img src="profile.jpg" alt="Kanchon Kanti Podder" class="profile-img">
+            <div class="photo-accent" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="about" class="section">
-        <h2>About</h2>
-        <p>
-          I am a PhD researcher working at the intersection of machine learning,
-          biomedical signal processing, robotics, and healthcare AI. My goal is to develop
-          data-driven methods that are robust, interpretable, and applicable to scientific
-          and clinical problems.
-        </p>
-      </section>
-
-      <section id="research" class="section">
-        <h2>Research Interests</h2>
-        <ul class="research-list">
-          <li>Machine Learning and Deep Learning</li>
-          <li>Biomedical Signal Processing</li>
-          <li>Computer Vision</li>
-          <li>Human-Robot Interaction</li>
-          <li>Healthcare AI</li>
-        </ul>
-      </section>
-
-      <section id="publications" class="section">
-        <h2>Selected Publications</h2>
-
-        <article class="publication">
-          <h3>Deep Learning for Biomedical Signal Analysis</h3>
-          <p class="pub-meta">Electronics, 2025</p>
-          <p>
-            Research on deep learning methods for biomedical signal interpretation and
-            healthcare-oriented intelligent analysis.
+    <!-- About -->
+    <section class="content-section" id="about-detail">
+      <div class="section-inner reveal">
+        <div class="section-label">01 — About</div>
+        <div class="section-body">
+          <p class="lead">
+            I am a PhD researcher working at the intersection of machine learning,
+            biomedical signal processing, robotics, and healthcare AI.
           </p>
-        </article>
-
-        <article class="publication">
-          <h3>Self-ChakmaNet: A Deep Learning Approach</h3>
-          <p class="pub-meta">2023</p>
           <p>
-            A deep learning framework for low-resource recognition tasks with practical
-            implications for intelligent systems.
+            My goal is to develop data-driven methods that are robust, interpretable,
+            and directly applicable to scientific and clinical problems. I believe
+            rigorous engineering and human-centered design are inseparable.
           </p>
-        </article>
+        </div>
+      </div>
+    </section>
 
-        <article class="publication">
-          <h3>Arabic Sign Language Recognition using Deep Learning</h3>
-          <p class="pub-meta">2023</p>
-          <p>
-            A computer vision and deep learning approach for sign language recognition
-            and accessible communication systems.
-          </p>
-        </article>
-      </section>
+    <!-- Research -->
+    <section class="content-section alt" id="research">
+      <div class="section-inner reveal">
+        <div class="section-label">02 — Research Interests</div>
+        <div class="research-grid">
+          <div class="research-card">
+            <div class="research-icon">◈</div>
+            <h3>Machine Learning &amp; Deep Learning</h3>
+            <p>Novel architectures and training strategies for real-world robustness.</p>
+          </div>
+          <div class="research-card">
+            <div class="research-icon">◈</div>
+            <h3>Biomedical Signal Processing</h3>
+            <p>Extracting clinically meaningful information from biosignals.</p>
+          </div>
+          <div class="research-card">
+            <div class="research-icon">◈</div>
+            <h3>Computer Vision</h3>
+            <p>Perception systems for medical imaging and human-computer interaction.</p>
+          </div>
+          <div class="research-card">
+            <div class="research-icon">◈</div>
+            <h3>Human-Robot Interaction</h3>
+            <p>Designing intuitive, safe interfaces between humans and robotic systems.</p>
+          </div>
+          <div class="research-card">
+            <div class="research-icon">◈</div>
+            <h3>Healthcare AI</h3>
+            <p>Bridging the gap between research models and clinical deployment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="experience" class="section">
-        <h2>Experience</h2>
-        <p>
-          Add your current PhD position, research roles, academic collaborations,
-          and relevant teaching or lab experience here.
-        </p>
-      </section>
+    <!-- Publications -->
+    <section class="content-section" id="publications">
+      <div class="section-inner reveal">
+        <div class="section-label">03 — Selected Publications</div>
+        <div class="pub-list">
 
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p><strong>Email:</strong> your@email.com</p>
-        <p><strong>Profiles:</strong> Google Scholar · GitHub · ResearchGate · ORCID</p>
-      </section>
-    </main>
-  </div>
+          <article class="pub-item">
+            <div class="pub-year">2025</div>
+            <div class="pub-content">
+              <h3 class="pub-title">Deep Learning for Biomedical Signal Analysis</h3>
+              <p class="pub-venue">Electronics, 2025</p>
+              <p class="pub-desc">
+                Research on deep learning methods for biomedical signal interpretation and
+                healthcare-oriented intelligent analysis.
+              </p>
+              <div class="pub-links">
+                <a href="#" class="pub-link">PDF</a>
+                <a href="#" class="pub-link">BibTeX</a>
+                <a href="#" class="pub-link">DOI</a>
+              </div>
+            </div>
+          </article>
 
+          <article class="pub-item">
+            <div class="pub-year">2023</div>
+            <div class="pub-content">
+              <h3 class="pub-title">Self-ChakmaNet: A Deep Learning Approach</h3>
+              <p class="pub-venue">Conference / Journal, 2023</p>
+              <p class="pub-desc">
+                A deep learning framework for low-resource recognition tasks with practical
+                implications for intelligent systems.
+              </p>
+              <div class="pub-links">
+                <a href="#" class="pub-link">PDF</a>
+                <a href="#" class="pub-link">BibTeX</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub-item">
+            <div class="pub-year">2023</div>
+            <div class="pub-content">
+              <h3 class="pub-title">Arabic Sign Language Recognition using Deep Learning</h3>
+              <p class="pub-venue">Conference / Journal, 2023</p>
+              <p class="pub-desc">
+                A computer vision and deep learning approach for sign language recognition
+                and accessible communication systems.
+              </p>
+              <div class="pub-links">
+                <a href="#" class="pub-link">PDF</a>
+                <a href="#" class="pub-link">BibTeX</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="content-section alt" id="experience">
+      <div class="section-inner reveal">
+        <div class="section-label">04 — Experience</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">20XX — Present</p>
+              <h3>PhD Researcher</h3>
+              <p class="timeline-org">Your University / Lab Name</p>
+              <p>Add a line or two describing your research focus, supervision, or key contributions.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">20XX — 20XX</p>
+              <h3>Previous Role or Degree</h3>
+              <p class="timeline-org">Institution Name</p>
+              <p>Brief description of your responsibilities or achievements here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="content-section contact-section" id="contact">
+      <div class="section-inner reveal">
+        <div class="section-label">05 — Contact</div>
+        <div class="contact-grid">
+          <div class="contact-block">
+            <p class="contact-meta">Email</p>
+            <a href="mailto:your@email.com" class="contact-value">your@email.com</a>
+          </div>
+          <div class="contact-block">
+            <p class="contact-meta">Academic Profiles</p>
+            <div class="profile-links">
+              <a href="#" class="profile-link">Google Scholar</a>
+              <a href="#" class="profile-link">GitHub</a>
+              <a href="#" class="profile-link">ResearchGate</a>
+              <a href="#" class="profile-link">ORCID</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© 2026 Kanchon Kanti Podder</p>
-      <p>Academic Website</p>
-    </div>
+    <p>© 2026 Kanchon Kanti Podder</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
