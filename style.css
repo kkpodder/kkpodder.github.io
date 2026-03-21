@@ -328,6 +328,13 @@ img { display: block; max-width: 100%; }
   border-radius: 2px;
 }
 
+.tag-accent {
+  background: rgba(28,63,94,0.08);
+  border-color: rgba(28,63,94,0.22);
+  color: var(--accent);
+  font-weight: 500;
+}
+
 /* Photo */
 .hero-photo { position: relative; }
 
@@ -443,9 +450,136 @@ img { display: block; max-width: 100%; }
   line-height: 1.6;
 }
 
+.primary-card {
+  border-left: 3px solid var(--accent);
+}
+
+/* Timeline extras */
+.timeline-spec {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-thesis {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  margin-top: 0.25rem;
+}
+
+.timeline-bullets {
+  margin-top: 0.5rem;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.timeline-bullets li {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+/* Recognition */
+.recog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.recog-heading {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+}
+
+.recog-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.recog-list li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  align-items: baseline;
+}
+
+.recog-year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-warm);
+  padding-top: 2px;
+}
+
 /* ============================================================
    PUBLICATIONS
    ============================================================ */
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.pub-filter-btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.18s;
+  font-family: var(--font-mono);
+}
+
+.pub-filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pub-filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.pub-count {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+}
+
+.pub-loading {
+  padding: 3rem 0;
+  color: var(--ink-faint);
+  font-size: 0.9rem;
+  font-family: var(--font-mono);
+}
+
+.pub-empty {
+  padding: 2rem 0;
+  color: var(--ink-faint);
+  font-size: 0.9rem;
+}
+
 .pub-list {
   display: flex;
   flex-direction: column;
@@ -518,6 +652,89 @@ img { display: block; max-width: 100%; }
   color: #fff;
   border-color: var(--accent);
 }
+
+/* Publications — dynamic */
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.filter-btn {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.35rem 0.9rem;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.filter-btn:hover {
+  border-color: var(--ink-muted);
+  color: var(--ink);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.filter-count {
+  font-size: 0.72rem;
+  opacity: 0.7;
+}
+
+.pub-type-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(28,63,94,0.07);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.pub-authors {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.et-al {
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.pub-loading, .pub-empty {
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+  padding: 2rem 0;
+}
+
+.pub-fallback {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.8;
+  padding: 1.5rem;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+}
+
+.pub-fallback a { color: var(--accent); text-decoration: underline; }
+.pub-fallback code { font-family: var(--font-mono); font-size: 0.85em; background: var(--bg-alt); padding: 1px 5px; border-radius: 3px; }
 
 /* ============================================================
    TIMELINE

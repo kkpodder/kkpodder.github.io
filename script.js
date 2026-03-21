@@ -9,7 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const offset = window.innerWidth <= 900 ? 64 : 0;
     const top = target.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: 'smooth' });
-    // Close mobile menu on nav click
     if (link.classList.contains('nav-link')) closeMobileMenu();
   });
 });
@@ -41,7 +40,6 @@ menuToggle.addEventListener('click', () => {
   menuOpen ? closeMobileMenu() : openMobileMenu();
 });
 
-// Close on outside click
 document.addEventListener('click', e => {
   if (menuOpen && !sidebar.contains(e.target) && e.target !== menuToggle) {
     closeMobileMenu();
@@ -49,14 +47,15 @@ document.addEventListener('click', e => {
 });
 
 // ============================================================
-// Scroll-spy — highlights active sidebar link
+// Scroll-spy
 // ============================================================
 const sections = [
   { id: 'about',        link: 'about' },
-  { id: 'about-detail', link: 'about' },
   { id: 'research',     link: 'research' },
-  { id: 'publications', link: 'publications' },
+  { id: 'education',    link: 'education' },
   { id: 'experience',   link: 'experience' },
+  { id: 'publications', link: 'publications' },
+  { id: 'recognition',  link: 'recognition' },
   { id: 'contact',      link: 'contact' },
 ];
 
@@ -91,6 +90,110 @@ const revealObserver = new IntersectionObserver(entries => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ============================================================
+// Publications — loads from publications.json
+// ============================================================
+const pubList    = document.getElementById('pub-list');
+const pubFilters = document.getElementById('pub-filters');
+
+let allPubs    = [];
+let activeYear = 'all';
+
+async function loadPublications() {
+  try {
+    const res = await fetch('publications.json');
+    if (!res.ok) throw new Error('not found');
+    allPubs = await res.json();
+    allPubs.sort((a, b) => (b.year || 0) - (a.year || 0));
+    buildFilters();
+    renderPubs();
+  } catch {
+    pubList.innerHTML = `
+      <p class="pub-empty">
+        No <code>publications.json</code> found yet —
+        <a href="bibtex-converter.html" style="color:var(--accent)">open the BibTeX converter</a>
+        to generate it from your Google Scholar export.
+      </p>`;
+  }
+}
+
+function buildFilters() {
+  const years = [...new Set(allPubs.map(p => p.year).filter(Boolean))].sort((a,b) => b - a);
+  pubFilters.appendChild(makeFilterBtn('All', 'all', true));
+  years.forEach(y => pubFilters.appendChild(makeFilterBtn(String(y), y, false)));
+}
+
+function makeFilterBtn(label, value, active) {
+  const btn = document.createElement('button');
+  btn.textContent  = label;
+  btn.className    = 'pub-filter-btn' + (active ? ' active' : '');
+  btn.dataset.year = value;
+  btn.addEventListener('click', () => {
+    activeYear = value;
+    document.querySelectorAll('.pub-filter-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.year == value);
+    });
+    renderPubs();
+  });
+  return btn;
+}
+
+function renderPubs() {
+  const filtered = activeYear === 'all'
+    ? allPubs
+    : allPubs.filter(p => String(p.year) === String(activeYear));
+
+  if (!filtered.length) {
+    pubList.innerHTML = '<p class="pub-empty">No publications found for this year.</p>';
+    return;
+  }
+
+  // Count line
+  let countEl = pubList.parentNode.querySelector('.pub-count');
+  if (!countEl) {
+    countEl = document.createElement('p');
+    countEl.className = 'pub-count';
+    pubList.parentNode.insertBefore(countEl, pubList);
+  }
+  countEl.textContent = `${filtered.length} publication${filtered.length !== 1 ? 's' : ''}`;
+
+  pubList.innerHTML = filtered.map(pub => {
+    const authors = pub.authors
+      ? `<p class="pub-authors">${highlightAuthor(pub.authors)}</p>`
+      : '';
+    const links = buildLinks(pub);
+    return `
+      <article class="pub-item">
+        <div class="pub-year">${pub.year || '—'}</div>
+        <div class="pub-content">
+          <h3 class="pub-title">${pub.title || 'Untitled'}</h3>
+          <p class="pub-venue">${pub.venue || pub.journal || pub.booktitle || ''}</p>
+          ${authors}
+          ${links}
+        </div>
+      </article>`;
+  }).join('');
+}
+
+function highlightAuthor(authors) {
+  return authors.replace(
+    /(Kanchon\s+Kanti\s+Podder|K\.?\s*K\.?\s*Podder|Podder,\s*K)/gi,
+    '<strong>$1</strong>'
+  );
+}
+
+function buildLinks(pub) {
+  const links = [];
+  if (pub.url)     links.push(`<a href="${pub.url}" class="pub-link" target="_blank" rel="noopener">Paper</a>`);
+  if (pub.pdf)     links.push(`<a href="${pub.pdf}" class="pub-link" target="_blank" rel="noopener">PDF</a>`);
+  if (pub.doi)     links.push(`<a href="https://doi.org/${pub.doi}" class="pub-link" target="_blank" rel="noopener">DOI</a>`);
+  if (pub.code)    links.push(`<a href="${pub.code}" class="pub-link" target="_blank" rel="noopener">Code</a>`);
+  if (pub.scholar) links.push(`<a href="${pub.scholar}" class="pub-link" target="_blank" rel="noopener">Scholar</a>`);
+  return links.length ? `<div class="pub-links">${links.join('')}</div>` : '';
+}
+
+loadPublications();

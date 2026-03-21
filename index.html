@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kanchon Kanti Podder — PhD Researcher</title>
-  <meta name="description" content="Academic website of Kanchon Kanti Podder — PhD Researcher in Machine Learning, Robotics, and Healthcare AI.">
+  <title>Kanchon Kanti Podder — PhD Candidate</title>
+  <meta name="description" content="Kanchon Kanti Podder — PhD Candidate at Kennesaw State University. Research in continual learning, computer vision, robotics, IoT, and biomedical AI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -12,7 +12,6 @@
 </head>
 <body>
 
-  <!-- Noise overlay -->
   <div class="noise" aria-hidden="true"></div>
 
   <!-- Sidebar -->
@@ -24,8 +23,10 @@
       <nav class="sidebar-nav" aria-label="Page sections">
         <a href="#about"        class="nav-link" data-section="about">About</a>
         <a href="#research"     class="nav-link" data-section="research">Research</a>
-        <a href="#publications" class="nav-link" data-section="publications">Publications</a>
+        <a href="#education"    class="nav-link" data-section="education">Education</a>
         <a href="#experience"   class="nav-link" data-section="experience">Experience</a>
+        <a href="#publications" class="nav-link" data-section="publications">Publications</a>
+        <a href="#recognition"  class="nav-link" data-section="recognition">Recognition</a>
         <a href="#contact"      class="nav-link" data-section="contact">Contact</a>
       </nav>
       <div class="sidebar-footer">
@@ -43,28 +44,31 @@
     </button>
   </header>
 
-  <!-- Main -->
   <main class="main" id="main">
 
-    <!-- Hero -->
+    <!-- ── HERO / ABOUT ─────────────────────────────────── -->
     <section class="hero" id="about">
       <div class="hero-grid">
         <div class="hero-text reveal">
-          <p class="hero-label">PhD Researcher</p>
+          <p class="hero-label">PhD Candidate · Kennesaw State University · Expected 2026</p>
           <h1 class="hero-name">Kanchon<br><em>Kanti Podder</em></h1>
           <p class="hero-tagline">
-            Building practical intelligent systems at the intersection of
-            machine learning, biomedical signal processing, and healthcare AI.
+            I build <strong>continual learning</strong> and <strong>uncertainty-aware</strong> systems
+            for robots and IoT agents that adapt over time — grounded in
+            <strong>computer vision</strong>, multimodal perception, and biomedical AI.
+            My dissertation addresses lifelong gesture recognition for human–robot interaction
+            under real-world distribution shift.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#publications">Selected Publications</a>
-            <a class="btn btn-ghost" href="#">Download CV</a>
+            <a class="btn btn-primary" href="#publications">Publications</a>
+            <a class="btn btn-ghost" href="CV_of_Kanchon_Kanti_Podder_Auburn_Postdoc.pdf" target="_blank" rel="noopener">Download CV</a>
           </div>
           <div class="hero-tags">
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Robotics</span>
-            <span class="tag">Healthcare AI</span>
-            <span class="tag">Computer Vision</span>
+            <span class="tag tag-accent">Continual Learning</span>
+            <span class="tag tag-accent">Computer Vision</span>
+            <span class="tag tag-accent">Robotics &amp; IoT</span>
+            <span class="tag">Biomedical AI</span>
+            <span class="tag">Multimodal Perception</span>
           </div>
         </div>
         <div class="hero-photo reveal reveal-delay">
@@ -76,157 +80,224 @@
       </div>
     </section>
 
-    <!-- About -->
-    <section class="content-section" id="about-detail">
-      <div class="section-inner reveal">
-        <div class="section-label">01 — About</div>
-        <div class="section-body">
-          <p class="lead">
-            I am a PhD researcher working at the intersection of machine learning,
-            biomedical signal processing, robotics, and healthcare AI.
-          </p>
-          <p>
-            My goal is to develop data-driven methods that are robust, interpretable,
-            and directly applicable to scientific and clinical problems. I believe
-            rigorous engineering and human-centered design are inseparable.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Research -->
+    <!-- ── RESEARCH ──────────────────────────────────────── -->
     <section class="content-section alt" id="research">
       <div class="section-inner reveal">
-        <div class="section-label">02 — Research Interests</div>
+        <div class="section-label">01 — Research Interests</div>
         <div class="research-grid">
-          <div class="research-card">
+          <div class="research-card primary-card">
             <div class="research-icon">◈</div>
-            <h3>Machine Learning &amp; Deep Learning</h3>
-            <p>Novel architectures and training strategies for real-world robustness.</p>
+            <h3>Continual &amp; Lifelong Learning</h3>
+            <p>Replay-based and uncertainty-aware frameworks that let robots learn new tasks without forgetting prior knowledge under distribution shift.</p>
+          </div>
+          <div class="research-card primary-card">
+            <div class="research-icon">◈</div>
+            <h3>Computer Vision &amp; Perception</h3>
+            <p>Video-based gesture recognition, masked autoencoders for self-supervised learning, and multimodal perception from visual and sensor streams.</p>
+          </div>
+          <div class="research-card primary-card">
+            <div class="research-icon">◈</div>
+            <h3>Robotics &amp; IoT Systems</h3>
+            <p>Deploying adaptive perception models on physical robots and smart IoT agents — bridging sim-to-real gaps in real-world environments.</p>
           </div>
           <div class="research-card">
             <div class="research-icon">◈</div>
-            <h3>Biomedical Signal Processing</h3>
-            <p>Extracting clinically meaningful information from biosignals.</p>
+            <h3>Biomedical AI</h3>
+            <p>Deep learning for biosignal analysis, medical imaging, and transcranial Doppler ultrasound — translating models toward clinical utility.</p>
           </div>
           <div class="research-card">
             <div class="research-icon">◈</div>
-            <h3>Computer Vision</h3>
-            <p>Perception systems for medical imaging and human-computer interaction.</p>
-          </div>
-          <div class="research-card">
-            <div class="research-icon">◈</div>
-            <h3>Human-Robot Interaction</h3>
-            <p>Designing intuitive, safe interfaces between humans and robotic systems.</p>
-          </div>
-          <div class="research-card">
-            <div class="research-icon">◈</div>
-            <h3>Healthcare AI</h3>
-            <p>Bridging the gap between research models and clinical deployment.</p>
+            <h3>Human–Robot Interaction</h3>
+            <p>Trustworthy hand-signal communication between humans and robotic agents, with conformal prediction for uncertainty-aware decision making.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Publications -->
-    <section class="content-section" id="publications">
+    <!-- ── EDUCATION ─────────────────────────────────────── -->
+    <section class="content-section" id="education">
       <div class="section-inner reveal">
-        <div class="section-label">03 — Selected Publications</div>
-        <div class="pub-list">
+        <div class="section-label">02 — Education</div>
+        <div class="timeline">
 
-          <article class="pub-item">
-            <div class="pub-year">2025</div>
-            <div class="pub-content">
-              <h3 class="pub-title">Deep Learning for Biomedical Signal Analysis</h3>
-              <p class="pub-venue">Electronics, 2025</p>
-              <p class="pub-desc">
-                Research on deep learning methods for biomedical signal interpretation and
-                healthcare-oriented intelligent analysis.
-              </p>
-              <div class="pub-links">
-                <a href="#" class="pub-link">PDF</a>
-                <a href="#" class="pub-link">BibTeX</a>
-                <a href="#" class="pub-link">DOI</a>
-              </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">2023 — May 2026 (Expected)</p>
+              <h3>PhD in Interdisciplinary Engineering</h3>
+              <p class="timeline-org">Kennesaw State University, USA &nbsp;·&nbsp; GPA 4.0 / 4.0</p>
+              <p class="timeline-spec">Specialisation: Intelligent Robotic Systems</p>
+              <p class="timeline-thesis">Dissertation: <em>General Intelligence for Robots Using Gesture Recognition in Incremental Learning Scenarios</em></p>
             </div>
-          </article>
+          </div>
 
-          <article class="pub-item">
-            <div class="pub-year">2023</div>
-            <div class="pub-content">
-              <h3 class="pub-title">Self-ChakmaNet: A Deep Learning Approach</h3>
-              <p class="pub-venue">Conference / Journal, 2023</p>
-              <p class="pub-desc">
-                A deep learning framework for low-resource recognition tasks with practical
-                implications for intelligent systems.
-              </p>
-              <div class="pub-links">
-                <a href="#" class="pub-link">PDF</a>
-                <a href="#" class="pub-link">BibTeX</a>
-              </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">2018 — 2019</p>
+              <h3>M.S. in Biomedical Physics &amp; Technology</h3>
+              <p class="timeline-org">University of Dhaka, Bangladesh &nbsp;·&nbsp; GPA 3.87 / 4.0 (WES)</p>
+              <p class="timeline-spec">Specialisation: Biomedical Engineering</p>
+              <p class="timeline-thesis">Thesis: <em>Bangla Sign Language Interpretation by Convolutional Neural Network</em></p>
             </div>
-          </article>
+          </div>
 
-          <article class="pub-item">
-            <div class="pub-year">2023</div>
-            <div class="pub-content">
-              <h3 class="pub-title">Arabic Sign Language Recognition using Deep Learning</h3>
-              <p class="pub-venue">Conference / Journal, 2023</p>
-              <p class="pub-desc">
-                A computer vision and deep learning approach for sign language recognition
-                and accessible communication systems.
-              </p>
-              <div class="pub-links">
-                <a href="#" class="pub-link">PDF</a>
-                <a href="#" class="pub-link">BibTeX</a>
-              </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">2012 — 2017</p>
+              <h3>B.Sc. in Electrical &amp; Electronic Engineering</h3>
+              <p class="timeline-org">Chittagong University of Engineering &amp; Technology, Bangladesh &nbsp;·&nbsp; GPA 3.08 / 4.0 (WES)</p>
             </div>
-          </article>
+          </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- ── EXPERIENCE ────────────────────────────────────── -->
     <section class="content-section alt" id="experience">
       <div class="section-inner reveal">
-        <div class="section-label">04 — Experience</div>
+        <div class="section-label">03 — Research Experience</div>
         <div class="timeline">
+
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <p class="timeline-period">20XX — Present</p>
-              <h3>PhD Researcher</h3>
-              <p class="timeline-org">Your University / Lab Name</p>
-              <p>Add a line or two describing your research focus, supervision, or key contributions.</p>
+              <p class="timeline-period">January 2023 — Present</p>
+              <h3>Graduate Research Assistant</h3>
+              <p class="timeline-org">Embodied Intelligence Lab, Kennesaw State University, USA</p>
+              <ul class="timeline-bullets">
+                <li>Designed and evaluated continual learning frameworks for lifelong gesture recognition in human–robot interaction, including replay-based methods with conformal prediction for uncertainty quantification.</li>
+                <li>Deployed multimodal perception models on physical robots and contributed to peer-reviewed publications in IEEE GLOBECOM, WF-IoT, AIM, and IROS.</li>
+              </ul>
             </div>
           </div>
+
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
-              <p class="timeline-period">20XX — 20XX</p>
-              <h3>Previous Role or Degree</h3>
-              <p class="timeline-org">Institution Name</p>
-              <p>Brief description of your responsibilities or achievements here.</p>
+              <p class="timeline-period">July 2021 — August 2022 &amp; December 2022</p>
+              <h3>Research Assistant</h3>
+              <p class="timeline-org">Machine Learning Group, Qatar University</p>
+              <ul class="timeline-bullets">
+                <li>Built end-to-end deep learning pipelines for medical imaging — CT-ICH segmentation, ocular analysis, thermography — and developed signer-independent Arabic Sign Language recognition from video.</li>
+                <li>Co-invented a US-filed patent on ML-based stratification for early diabetic foot complications using thermographic imaging; led interpretable and data-efficient ML across multi-institutional datasets.</li>
+              </ul>
             </div>
           </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">September 2022 — November 2022</p>
+              <h3>Research Assistant</h3>
+              <p class="timeline-org">College of Engineering, Qatar University</p>
+              <ul class="timeline-bullets">
+                <li>Developed meta-learning and feature engineering methods for medical image classification tasks.</li>
+                <li>Built deep learning models to classify Parkinson's disease from corneal confocal microscopy images.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">July 2019 — June 2020</p>
+              <h3>Research Fellow</h3>
+              <p class="timeline-org">Dept. of Biomedical Physics &amp; Technology, University of Dhaka &nbsp;·&nbsp; ICT Division Fellowship</p>
+              <ul class="timeline-bullets">
+                <li>Built large-scale image datasets and preprocessing pipelines in MATLAB and Python for biomedical ML research.</li>
+                <li>Delivered CNN-based real-time inference systems and end-to-end ML pipelines for classification tasks.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ── PUBLICATIONS ──────────────────────────────────── -->
+    <section class="content-section" id="publications">
+      <div class="section-inner reveal">
+        <div class="section-label">04 — Publications</div>
+        <div id="pub-filters" class="pub-filters" role="group" aria-label="Filter by year"></div>
+        <div id="pub-list" class="pub-list">
+          <div class="pub-loading">Loading publications…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RECOGNITION ───────────────────────────────────── -->
+    <section class="content-section alt" id="recognition">
+      <div class="section-inner reveal">
+        <div class="section-label">05 — Recognition &amp; Service</div>
+        <div class="recog-grid">
+
+          <div class="recog-block">
+            <p class="recog-heading">Awards &amp; Honours</p>
+            <ul class="recog-list">
+              <li>
+                <span class="recog-year">2026</span>
+                <span>Doctoral Completion Stipend (Nominated) — Kennesaw State University</span>
+              </li>
+              <li>
+                <span class="recog-year">2024</span>
+                <span>NSF Student Travel Award — IEEE/ASME AIM 2024</span>
+              </li>
+              <li>
+                <span class="recog-year">2017</span>
+                <span>Best Poster — IEEE Region 10 Humanitarian Technology Conference</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="recog-block">
+            <p class="recog-heading">Service &amp; Leadership</p>
+            <ul class="recog-list">
+              <li>
+                <span class="recog-year">2025–</span>
+                <span>Vice President &amp; Treasurer, IEEE Student Branch, Kennesaw State University</span>
+              </li>
+              <li>
+                <span class="recog-year">2025–</span>
+                <span>Reviewer, PeerJ Computer Science</span>
+              </li>
+              <li>
+                <span class="recog-year">2016–17</span>
+                <span>Student Branch Chair, IEEE CUET</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="recog-block">
+            <p class="recog-heading">Visits &amp; Exchanges</p>
+            <ul class="recog-list">
+              <li>
+                <span class="recog-year">2019</span>
+                <span>Sakura Science Exchange Program — Kyushu Institute of Technology, Japan</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ───────────────────────────────────────── -->
     <section class="content-section contact-section" id="contact">
       <div class="section-inner reveal">
-        <div class="section-label">05 — Contact</div>
+        <div class="section-label">06 — Contact</div>
         <div class="contact-grid">
           <div class="contact-block">
             <p class="contact-meta">Email</p>
-            <a href="mailto:your@email.com" class="contact-value">your@email.com</a>
+            <a href="mailto:kk.podder754@gmail.com" class="contact-value">kk.podder754@gmail.com</a>
           </div>
           <div class="contact-block">
             <p class="contact-meta">Academic Profiles</p>
             <div class="profile-links">
               <a href="#" class="profile-link">Google Scholar</a>
+              <a href="#" class="profile-link">LinkedIn</a>
               <a href="#" class="profile-link">GitHub</a>
               <a href="#" class="profile-link">ResearchGate</a>
               <a href="#" class="profile-link">ORCID</a>
@@ -238,7 +309,6 @@
 
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <p>© 2026 Kanchon Kanti Podder</p>
   </footer>
