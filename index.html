@@ -52,13 +52,21 @@
         <div class="hero-text reveal">
           <p class="hero-label">PhD Candidate · Kennesaw State University · Expected 2026</p>
           <h1 class="hero-name">Kanchon<br><em>Kanti Podder</em></h1>
+
           <p class="hero-tagline">
-            I build <strong>continual learning</strong> and <strong>uncertainty-aware</strong> systems
-            for robots and IoT agents that adapt over time — grounded in
-            <strong>computer vision</strong>, multimodal perception, and biomedical AI.
-            My dissertation addresses lifelong gesture recognition for human–robot interaction
-            under real-world distribution shift.
+            I develop <kw>continual learning</kw> and uncertainty-aware models for
+            <kw>adaptive robots</kw> and <kw>IoT systems</kw> that learn over time without
+            forgetting. My work is grounded in <kw>computer vision</kw> and multimodal perception —
+            combining video, sensor, and signal data for <kw>human–robot interaction</kw>,
+            <kw>biomedical AI</kw>, and real-world intelligent systems.
           </p>
+
+          <p class="hero-sub">
+            PhD dissertation: <em>General Intelligence for Robots Using Gesture Recognition
+            in Incremental Learning Scenarios</em> — Kennesaw State University, Embodied
+            Intelligence Lab. GPA 4.0 / 4.0.
+          </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#publications">Publications</a>
             <a class="btn btn-ghost" href="CV_of_Kanchon_Kanti_Podder_Auburn_Postdoc.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -221,10 +229,17 @@
     <section class="content-section" id="publications">
       <div class="section-inner reveal">
         <div class="section-label">04 — Publications</div>
-        <div id="pub-filters" class="pub-filters" role="group" aria-label="Filter by year"></div>
-        <div id="pub-list" class="pub-list">
-          <div class="pub-loading">Loading publications…</div>
+        <div class="pub-toolbar">
+          <div id="pub-filters" class="pub-filters" role="group" aria-label="Filter by year"></div>
+          <div id="pub-type-filters" class="pub-filters pub-type-filters" role="group" aria-label="Filter by type"></div>
         </div>
+        <p class="pub-count" id="pub-count"></p>
+        <div class="pub-scroll">
+          <div id="pub-list" class="pub-list">
+            <div class="pub-loading">Loading publications…</div>
+          </div>
+        </div>
+        <p class="pub-hint">scroll inside to browse all publications</p>
       </div>
     </section>
 

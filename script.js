@@ -152,16 +152,12 @@ function renderPubs() {
     return;
   }
 
-  // Count line
-  let countEl = pubList.parentNode.querySelector('.pub-count');
-  if (!countEl) {
-    countEl = document.createElement('p');
-    countEl.className = 'pub-count';
-    pubList.parentNode.insertBefore(countEl, pubList);
-  }
-  countEl.textContent = `${filtered.length} publication${filtered.length !== 1 ? 's' : ''}`;
+  // Update count
+  const countEl = document.getElementById('pub-count');
+  if (countEl) countEl.textContent = `${filtered.length} publication${filtered.length !== 1 ? 's' : ''}`;
 
   pubList.innerHTML = filtered.map(pub => {
+    const venue   = pub.venue || pub.journal || pub.booktitle || '';
     const authors = pub.authors
       ? `<p class="pub-authors">${highlightAuthor(pub.authors)}</p>`
       : '';
@@ -171,7 +167,7 @@ function renderPubs() {
         <div class="pub-year">${pub.year || '—'}</div>
         <div class="pub-content">
           <h3 class="pub-title">${pub.title || 'Untitled'}</h3>
-          <p class="pub-venue">${pub.venue || pub.journal || pub.booktitle || ''}</p>
+          ${venue ? `<p class="pub-venue">${venue}</p>` : ''}
           ${authors}
           ${links}
         </div>
