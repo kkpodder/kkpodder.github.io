@@ -1,12 +1,12 @@
 :root {
-  --bg: #f8f8f6;
+  --bg: #f7f7f5;
   --surface: #ffffff;
   --text: #1f2933;
   --muted: #5b6670;
-  --line: #d7dce1;
-  --accent: #243447;
-  --accent-light: #eef2f5;
-  --max-width: 980px;
+  --line: #d8dde3;
+  --accent: #23384d;
+  --sidebar: #f2f4f7;
+  --max-width: 1200px;
 }
 
 * {
@@ -20,8 +20,8 @@ html {
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  color: var(--text);
   background: var(--bg);
+  color: var(--text);
   line-height: 1.7;
 }
 
@@ -39,24 +39,22 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Header */
 .site-header {
   background: var(--surface);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 3px solid var(--accent);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
 }
 
 .header-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 1.5rem;
-  padding: 1.4rem 0 1rem;
+  padding: 1.5rem 0;
 }
 
 .site-title h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.3rem;
   line-height: 1.15;
-  color: #16202a;
+  color: #182533;
 }
 
 .subtitle {
@@ -65,22 +63,64 @@ a:hover {
   font-size: 1rem;
 }
 
-.nav {
+/* Layout */
+.page-layout {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.96rem;
+  width: min(var(--max-width), 100%);
+  margin: 0 auto;
 }
 
-.nav a {
+.sidebar {
+  width: 220px;
+  min-height: calc(100vh - 90px);
+  background: var(--sidebar);
+  border-right: 1px solid var(--line);
+  padding: 2rem 1.2rem;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sidebar-nav a {
   color: var(--text);
+  font-size: 1rem;
+  padding: 0.15rem 0;
 }
 
+.sidebar-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  min-width: 0;
+}
+
+/* Intro */
 .intro {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  padding-bottom: 1.5rem;
+}
+
+.intro-flex {
+  display: flex;
   gap: 2rem;
-  padding: 3rem 0 2rem;
+  align-items: flex-start;
+}
+
+.intro-text {
+  flex: 1.5;
+}
+
+.intro-image {
+  flex: 0 0 240px;
 }
 
 .eyebrow {
@@ -95,29 +135,21 @@ a:hover {
   margin: 0 0 1rem;
   font-size: 2rem;
   line-height: 1.2;
+  color: #162332;
 }
 
-.intro p {
-  margin-top: 0;
+.profile-main {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid #cfd6dd;
+  padding: 4px;
+  background: #fff;
 }
 
-.intro-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  padding: 1.2rem;
-  height: fit-content;
-}
-
-.intro-card h3 {
-  margin-top: 0;
-  font-size: 1.05rem;
-}
-
-.intro-card ul {
-  margin: 0;
-  padding-left: 1.1rem;
-}
-
+/* Buttons */
 .links {
   display: flex;
   flex-wrap: wrap;
@@ -141,17 +173,19 @@ a:hover {
 .button.primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #ffffff;
+  color: #fff;
 }
 
+/* Sections */
 .section {
-  padding: 1.7rem 0 1.2rem;
+  padding: 1.6rem 0 1.2rem;
   border-top: 1px solid var(--line);
 }
 
 .section h2 {
   margin: 0 0 1rem;
   font-size: 1.5rem;
+  color: #182533;
 }
 
 .research-list {
@@ -159,11 +193,12 @@ a:hover {
   padding-left: 1.2rem;
 }
 
+/* Publications */
 .publication {
   background: var(--surface);
   border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
-  padding: 1rem 1rem 0.9rem;
+  padding: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -178,8 +213,8 @@ a:hover {
   font-style: italic;
 }
 
+/* Footer */
 .site-footer {
-  margin-top: 2rem;
   border-top: 1px solid var(--line);
   background: var(--surface);
 }
@@ -193,26 +228,54 @@ a:hover {
   font-size: 0.95rem;
 }
 
-@media (max-width: 760px) {
-  .header-wrap,
-  .intro,
-  .footer-wrap {
+/* Responsive */
+@media (max-width: 900px) {
+  .page-layout {
     display: block;
   }
 
-  .nav {
-    margin-top: 1rem;
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 1rem;
   }
 
-  .intro {
-    padding-top: 2rem;
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
-  .intro-card {
-    margin-top: 1.5rem;
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .intro-flex {
+    flex-direction: column;
+  }
+
+  .intro-image {
+    flex: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-title h1 {
+    font-size: 1.8rem;
   }
 
   .intro h2 {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
+  }
+
+  .profile-main {
+    width: 180px;
+  }
+
+  .footer-wrap {
+    display: block;
   }
 }
