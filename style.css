@@ -24,7 +24,7 @@
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; font-size: 17px; }
 
 body {
   font-family: var(--font-body);
@@ -230,12 +230,16 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 4rem;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 4rem;
   width: 100%;
-  max-width: 900px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 620px;
 }
 
 .hero-label {
@@ -261,9 +265,9 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-tagline {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--ink-muted);
-  max-width: 480px;
+  max-width: 580px;
   line-height: 1.8;
   margin-bottom: 1.1rem;
 }
@@ -285,6 +289,41 @@ kw {
   margin-bottom: 1.75rem;
   padding-left: 0.75rem;
   border-left: 2px solid var(--line);
+}
+
+.hero-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.4rem 0.85rem;
+  border-radius: 99px;
+  transition: all 0.18s;
+  cursor: pointer;
+}
+
+.contact-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(28,63,94,0.04);
+}
+
+.chip-icon {
+  font-size: 0.78rem;
+  font-style: normal;
+  color: var(--accent-warm);
+  line-height: 1;
 }
 
 .hero-actions {
@@ -359,12 +398,13 @@ kw {
 
 .photo-frame {
   position: relative;
-  width: 260px;
+  width: 300px;
+  flex-shrink: 0;
 }
 
 .profile-img {
-  width: 260px;
-  height: 320px;
+  width: 300px;
+  height: 370px;
   object-fit: cover;
   border-radius: 6px;
   position: relative;
@@ -986,8 +1026,11 @@ kw {
     min-height: auto;
   }
   .hero-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2.5rem;
+  }
+  .hero-text {
+    max-width: 100%;
   }
   .hero-photo {
     order: -1;
