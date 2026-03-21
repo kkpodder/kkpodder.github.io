@@ -239,7 +239,8 @@ img { display: block; max-width: 100%; }
 
 .hero-text {
   flex: 1;
-  max-width: 620px;
+  min-width: 0;
+  padding-right: 2rem;
 }
 
 .hero-label {
@@ -267,7 +268,6 @@ img { display: block; max-width: 100%; }
 .hero-tagline {
   font-size: 1.15rem;
   color: var(--ink-muted);
-  max-width: 580px;
   line-height: 1.8;
   margin-bottom: 1.1rem;
 }
@@ -284,7 +284,6 @@ kw {
 .hero-sub {
   font-size: 0.85rem;
   color: var(--ink-faint);
-  max-width: 480px;
   line-height: 1.6;
   margin-bottom: 1.75rem;
   padding-left: 0.75rem;
