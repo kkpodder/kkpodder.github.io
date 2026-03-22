@@ -449,6 +449,13 @@ kw {
   font-family: var(--font-mono);
 }
 
+.section-label + .timeline + .section-label,
+.timeline + .section-label {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+
 /* About */
 .lead {
   font-family: var(--font-display);
